@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <% if (typeof berhasil !='undefined' ) { %>
+        <div class="alert alert-warning alert-dismissible fade show col-md-6 mt-3" role="alert">
+          <strong>
+            <%=berhasil%>
+          </strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+          <% if (typeof hapus !='undefined' ) { %>
+            <div class="alert alert-warning alert-dismissible fade show col-md-6 mt-3" role="alert">
+              <strong>
+                <%=hapus%>
+              </strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
+              <% if (typeof ubah !='undefined' ) { %>
+                <div class="alert alert-warning alert-dismissible fade show col-md-6 mt-3" role="alert">
+                  <strong>
+                    <%=ubah%>
+                  </strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <% } %>
+                  <h1>
+                    Daftar Contact
+                  </h1>
+                  <a href="/contact/add" class="btn btn-primary"> Tambah</a>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">No HP</th>
+                        <th scope="col">Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% if (contacts.length===0) { %>
+                        <div class="alert alert-danger" role="alert">
+                          tidak ada
+                        </div>
+                        <% } %>
+                          <% contacts.forEach((contact,i)=> { i++
+                            %>
+
+                            <tr>
+                              <th scope="row">
+                                <%=i++%>
+                              </th>
+                              <td>
+                                <%=contact.nama%>
+                              </td>
+                              <td>
+                                <%=contact.nohp%>
+                              </td>
+                              <td>
+                                <a href="/contact/<%=contact.nama%>" class="btn btn-success bagde rounded-pill"><i
+                                    class="bi bi-info"></i>
+                                  Aksi</a>
+                              </td>
+                            </tr>
+                            <% }) %>
+
+                    </tbody>
+                  </table>
+
+    </div>
+  </div>
+</div>
