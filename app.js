@@ -126,11 +126,15 @@ app.delete('/contact', (req, res) => {
 // ubah contact
 app.get('/Contact/edit/:nama', async (req, res) => {
   const contact = await Contact.findOne({ nama: req.params.nama })
-  res.render('edit-contact', {
-    layout: 'layouts/main',
-    title: 'Ubah',
-    contact
-  })
+  if (!contact) {
+    res.status(404);
+    res.send('<h1>404</h1>')
+  } else
+    res.render('edit-contact', {
+      layout: 'layouts/main',
+      title: 'Ubah',
+      contact
+    })
 })
 
 //  proses ubah contact

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 // mongoose.connect('mongodb://127.0.0.1:27017/wpu', {
-mongoose.connect('mongodb+srv://stevebrata009:satbra007@cluster0.nbv4k.mongodb.net/daftar?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://@cluster0.nbv4k.mongodb.net/daftar?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   // useCreateIndex: true,
